@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Didact+Gothic);
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+#main-container{
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    margin: 0  !important;
+    
+}
+
+
+#main-container > div{
+    height: 100%;
+    padding: 0 !important;
+    margin: 0  !important;
+    
+}
+
+.owl-item{
+    /* margin-top: -10px */
+}
+
+#left-container{
+    background: rgb(42,43,45);
+}
+
+#main-slides div.item{
+    background: #e4e4e4;
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#main-slides div.item>div.subtitle{
+    background: rgba(5,124,133,.4);
+    padding: 20px 40px;
+    position: absolute;
+    bottom: 10%;
+    width: auto;
+    display: inline-block;
+    color: #fff
+}
+
+#main-slides div.item>div.subtitle .btn-default{
+    border: 1px solid #FFF;
+    background: transparent;
+    color: #FFF;
+    border-radius: 0;
+}
+
+
+#main-slides div.item>div.subtitle .btn-default:hover{
+    color: rgba(5,124,133,.9);
+    background: #FFF
+}
+
+#main-slides div.item>div.subtitle h4{
+    color: #fff;
+    font-size: 3em !important;
+    font-weight: 100
+}
+
+#social-links{
+    position: absolute;
+    bottom: 30px;
+    width: 90%;
+    text-align: center;
+    padding: 15px 0 0 0;
+    margin: 0 5%;
+    border-top: 1px solid #444
+    
+}
+
+
+
+#social-links a{
+    color: #777;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 2em;
+    padding: 0 10px
+}
+
+#social-links a:hover{
+    color: #fff
+}
+
+.space40{
+    display: inline-block;
+    padding: 20px 0;
+    width: 100%
+}
+
+
+.owl-controls{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    height: auto
+}
+.owl-dots{
+    height: auto
+}
+
+.owl-controls>.owl-nav{
+    display: none
+}
+
+.owl-controls>.owl-dots>.owl-dot{
+    width: 10px !important; height: 10px !important;
+    display: inline-block;
+    border:  1px solid darkorange;
+    border-radius: 50%;
+    margin: 2px
+}
+.owl-controls>.owl-dots>.owl-dot:hover,
+.owl-controls>.owl-dots>.owl-dot.active
+{
+    border:  1px solid darkorange;
+    background: darkorange
+    
+}
