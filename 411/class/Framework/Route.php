@@ -4,7 +4,7 @@ namespace Framework;
 
 class Route {
 
-    public static function view($template = null, $data = array()){
+    public static function view($template = null, $data = array(), $headers = true){
 
         extract($data);
 
@@ -18,11 +18,15 @@ class Route {
 
             if(file_exists($template)){
 
-                include_once BASE_DIR.'/views/inc/header.inc.php';
+                if($headers){
+                    include_once BASE_DIR.'/views/inc/header.inc.php';
+                }
 
                 include_once $template;
 
-                include_once BASE_DIR.'/views/inc/footer.inc.php';
+                if($headers) {
+                    include_once BASE_DIR . '/views/inc/footer.inc.php';
+                }
 
 
             } else {

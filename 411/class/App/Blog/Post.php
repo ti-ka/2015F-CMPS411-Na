@@ -33,7 +33,9 @@ class Post
     }
 
     public function getFromSlug($slug){
-        $posts = DB::get("posts",["slug" => $slug],null,null,"App\\Blog\\Post");
+
+        $posts = DB::get("posts",["slug" => $slug],1,null,"App\\Blog\\Post");
+
         if(count($posts) === 1){
             $post = $posts[0];
             $this->postId = $post->postId;
@@ -50,6 +52,11 @@ class Post
         return $this;
     }
 
+    public function getDate(){
+        $dt = new \DateTime($this->createDate);
+        return $dt->format("M d, Y @ h:ia");
+    }
+
     public function save(){
         $postData = [
             "title" => $this->title,
@@ -57,6 +64,7 @@ class Post
             "content" => $this->content,
             //more
         ];
+
 
         if($this->postId == null){
             $success = $this->addNewPost($postData);
@@ -68,7 +76,12 @@ class Post
 
     }
 
+    public function deletePost($slug){
+        return DB::delete("posts",["slug" => $slug]);
+    }
+
     private function addNewPost($postData){
+
         if(DB::insert("posts",$postData)){
             return true;
         } else {
@@ -78,6 +91,7 @@ class Post
 
     private function updatePost($postData){
         $params = ["postId" => $this->postId];
+
         if(DB::update("posts",$postData, $params)){
             return true;
         } else {

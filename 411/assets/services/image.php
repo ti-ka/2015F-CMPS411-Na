@@ -1,8 +1,11 @@
 <?php
 
-require_once '../init.php';
+require_once '../../init.php';
 
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
+
 header("Pragma: public");
 header("Cache-Control: max-age = 604800");
 header("Expires: ".gmdate("D, d M Y H:i:s", time() + 604800)." GMT");

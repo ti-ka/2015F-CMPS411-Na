@@ -15,6 +15,7 @@ class RouteConfig{
     public static function route($uri)
     {
 
+        $uri = self::cleanQuery($uri);
         if (array_key_exists($uri, self::$routes)) {
             Route::get(self::$routes[$uri]);
             return true;
@@ -22,6 +23,8 @@ class RouteConfig{
 
 
         $_uri = explode('/',$uri);
+
+
 
         foreach (self::$routes as $route => $method) {
 
@@ -69,6 +72,11 @@ class RouteConfig{
 
     }
 
+    public static function cleanQuery($uri){
+        $uris = explode("?",$uri);
+        $uri = $uris[0];
+        return rtrim($uri,"/");
+    }
 
 
 

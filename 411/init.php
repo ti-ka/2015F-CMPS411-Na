@@ -30,3 +30,15 @@ function autoloader($class) {
 
 spl_autoload_register('autoloader');
 
+
+function RequireAuth($level = 1){
+    $redirect = \Controllers\AuthController::currentURL();
+
+    \Controllers\AuthController::authenticate($level, $redirect);
+}
+
+function LogOut(){
+    $redirect = "/411";
+    \Controllers\AuthController::voidToken($redirect);
+}
+
