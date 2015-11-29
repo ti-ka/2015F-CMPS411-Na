@@ -4,7 +4,7 @@
 /*
     +--------------------------------------------------------------------+
     +                                                                    +
-    +   init.php contains defines basic BASE_DIR and URL(s).             +
+    +   init.bk.php contains defines basic BASE_DIR and URL(s).             +
     +   It also imports:                                                 +
     +   config/constants.php                                             +
     +   config/autoloader.php                                            +
