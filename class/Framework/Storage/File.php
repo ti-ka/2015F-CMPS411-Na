@@ -11,16 +11,14 @@ class File
 
     public static function getRealPath($filePath){
 
-        $filePath =  trim($filePath,DIRECTORY_SEPARATOR); //Making things easier
-        $base = trim(BASE_DIR, DIRECTORY_SEPARATOR);
+        $filePath =  DIRECTORY_SEPARATOR .trim($filePath,DIRECTORY_SEPARATOR); //Making things easier
+        $base = DIRECTORY_SEPARATOR . trim(BASE_DIR, DIRECTORY_SEPARATOR);
 
         //BasePath is not there
         if(strpos(strtolower($filePath), strtolower($base)) === false) {
 
             $filePath = BASE_DIR  . $filePath;
         }
-
-        $filePath = DIRECTORY_SEPARATOR . trim($filePath,DIRECTORY_SEPARATOR);
 
         return  $filePath ;
     }
