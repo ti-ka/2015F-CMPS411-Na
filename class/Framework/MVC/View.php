@@ -22,8 +22,10 @@ class View extends MinifyHelper
 
     public function __construct($view = null, $vars = [])
     {
+        $view = str_replace(".",DIRECTORY_SEPARATOR,$view);
         $this->view = $view;
         $this->pass($vars);
+
     }
 
     public function prepare()
@@ -36,7 +38,7 @@ class View extends MinifyHelper
         if($this->view === null){
             self::includeMVCView();
         } else {
-            $filePath = BASE_DIR . "/views/" .  $this->view . ".php";
+            $filePath = BASE_DIR  . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR .  $this->view . ".php";
             self::includeRequestedView($filePath);
         }
 
@@ -53,7 +55,7 @@ class View extends MinifyHelper
         $controller = strtolower(Globals::getItem("controller"));
         $method = strtolower(Globals::getItem("method"));
 
-        $filePath = BASE_DIR . "/views/" .  $controller . "/" . $method . ".php";
+        $filePath = BASE_DIR . DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR .  $controller . DIRECTORY_SEPARATOR . $method . ".php";
         self::includeRequestedView($filePath);
     }
 
@@ -61,10 +63,12 @@ class View extends MinifyHelper
     public function printView($filePath){
         $controller = strtolower(Globals::getItem("controller"));
         $paths = [
-            BASE_DIR . "/views/_shared",
-            BASE_DIR . "/views/" . $controller
+            BASE_DIR . DIRECTORY_SEPARATOR ."views" . DIRECTORY_SEPARATOR . "_shared",
+            BASE_DIR . DIRECTORY_SEPARATOR ."views" . DIRECTORY_SEPARATOR . $controller
         ];
-        $razr = new Engine(new FilesystemLoader($paths), BASE_DIR . "/views/.razr-cache" );
+
+
+        $razr = new Engine(new FilesystemLoader($paths), BASE_DIR . DIRECTORY_SEPARATOR ."views". DIRECTORY_SEPARATOR .".razr-cache" );
 
         $page = new \stdClass();
         $page->title = $this->title;

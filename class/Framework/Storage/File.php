@@ -10,7 +10,7 @@ class File
     }
 
     public static function getRealPath($filePath){
-        $filePath = "/" . trim($filePath,"/"); //Making things easier
+        $filePath =  trim($filePath,DIRECTORY_SEPARATOR); //Making things easier
 
         //BasePath is not there
         if(strpos(strtolower($filePath),strtolower(BASE_DIR)) === false) {
@@ -43,7 +43,7 @@ class File
         return false;
     }
 
-    public static function uploadFiles($to = "assets/uploads"){
+    public static function uploadFiles($to = "assets".DIRECTORY_SEPARATOR."uploads"){
 
         if(!self::exists($to)){
             self::makeDirectory($to);
@@ -52,11 +52,11 @@ class File
         $filesUploaded = [];
         if(self::isFileUploaded()){
             foreach($_FILES as $file){
-                $uploadPath = $to."/".time()."-".$file["name"];
+                $uploadPath = $to. DIRECTORY_SEPARATOR .time()."-".$file["name"];
                 try{
                     self::move($file["tmp_name"],$uploadPath);
                     $filesUploaded[] = $uploadPath;
-                    @chmod(BASE_DIR ."/" . $uploadPath, 0777);
+                    @chmod(BASE_DIR . DIRECTORY_SEPARATOR . $uploadPath, 0777);
                 } catch (\Exception $e){
                     die("Error uploading file". $e->getMessage());
                 }

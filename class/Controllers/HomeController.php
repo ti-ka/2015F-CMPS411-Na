@@ -12,7 +12,7 @@
         public function index(){
             $app = new \stdClass();
             $app->name = "my app";
-            return view("home/index",["app" => $app]);
+            return view("home.index",["app" => $app]);
         }
 
         public function doc(){
@@ -20,7 +20,7 @@
         }
 
         public function image(){
-            return view("home/image");
+            return view("home.image");
         }
 
         public function test(){
@@ -28,11 +28,11 @@
         }
 
         public function error404(){
-            return view("errors/404")->title("Oops!!! 404 Error");
+            return view("errors.404")->title("Oops!!! 404 Error");
         }
 
         public function error500(){
-            return view("errors/500")->title("Oops!!! 500 Error");
+            return view("errors.500")->title("Oops!!! 500 Error");
         }
 
 
