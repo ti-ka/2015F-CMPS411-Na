@@ -1,2 +1,19 @@
+<<<<<<< Updated upstream
 *.cache
 config/init.php
+=======
+
+*.cache
+>>>>>>> Stashed changes
+
+config/DBConstants.php
+
+.idea/workspace.xml
+
+config/DBConstants.php
+
+config/DBConstants.php
+
+.idea/workspace.xml
+
+config/DBConstants.php
