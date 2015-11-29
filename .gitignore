@@ -17,3 +17,5 @@ config/DBConstants.php
 .idea/workspace.xml
 
 config/DBConstants.php
+
+*.cache

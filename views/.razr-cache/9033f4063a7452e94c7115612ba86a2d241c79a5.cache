@@ -36,7 +36,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="assets/protocols/qv/css/custom.css">
+    <link rel="stylesheet" href="assets/protocols/qv/css/style-custom.css">
 
     <?php $this->getExtension('core')->startBlock('style') ?>
     <!-- For Extra Set of Styles on child page -->
