@@ -1,0 +1,7 @@
+<?php /* /Volumes/SD/Data/Box Sync/WebProjects/Sites/hooks/views/errors/404.php */ ?><?php $this->extend("_layout") ?>
+
+<?php $this->getExtension('core')->startBlock('content') ?>
+
+    <h1>404</h1>
+
+<?php echo($this->getExtension('core')->endBlock()) ?>
