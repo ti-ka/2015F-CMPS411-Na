@@ -14,8 +14,17 @@ if( ! ini_get('date.timezone') )
 
 if(!defined("BASE_DIR")){
     define("BASE_DIR", dirname(__DIR__));
-    define("BASE_URL_RELATIVE", explode($_SERVER['DOCUMENT_ROOT'],BASE_DIR)[1].'/');
-    define("BASE_URL", $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].''.BASE_URL_RELATIVE);
+
+    $parts = explode($_SERVER['DOCUMENT_ROOT'], BASE_DIR);
+
+    if(count($parts) === 2){
+        define("BASE_URL_RELATIVE", $parts[1] . DIRECTORY_SEPARATOR);
+    } else {
+        define("BASE_URL_RELATIVE", DIRECTORY_SEPARATOR);
+    }
+    
+
+    define("BASE_URL", $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST']. BASE_URL_RELATIVE);
 }
 
 //Grabbing constants
