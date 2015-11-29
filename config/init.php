@@ -18,13 +18,24 @@ if(!defined("BASE_DIR")){
     $parts = explode($_SERVER['DOCUMENT_ROOT'], BASE_DIR);
 
     if(count($parts) === 2){
-        define("BASE_URL_RELATIVE", $parts[1] . DIRECTORY_SEPARATOR);
+        define("BASE_URL_RELATIVE", $parts[1] , "/");
+
     } else {
-        define("BASE_URL_RELATIVE", DIRECTORY_SEPARATOR);
+        define("BASE_URL_RELATIVE","/");
+
     }
+
+    // print(BASE_DIR."<br>");
+
+    //print(BASE_URL_RELATIVE."<br>");
+
+
 
 
     define("BASE_URL", $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST']. BASE_URL_RELATIVE);
+
+    //print(BASE_URL."<br>");
+
 }
 
 //Grabbing constants
