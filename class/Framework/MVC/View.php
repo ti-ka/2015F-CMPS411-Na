@@ -47,6 +47,8 @@ class View extends MinifyHelper
     private function includeRequestedView($filePath){
         if(File::exists($filePath)){
             self::printView($filePath);
+        } else {
+            echo "Requested View not found. " . $filePath;
         }
     }
 
