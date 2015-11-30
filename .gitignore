@@ -19,3 +19,7 @@ config/DBConstants.php
 config/DBConstants.php
 
 *.cache
+
+config/init.backup.php
+
+*.cache

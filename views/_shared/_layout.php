@@ -45,26 +45,29 @@
 </head>
 
 
-    <body>
+    <body data-spy="scroll" data-offset="80">
 
+        @block('splash')
+
+        <!-- This section appears before navigation -->
+
+        @endblock
+
+        @( component('NavigationBar') )
 
         @block('content')
 
-        <!-- Content from child page is rendered here. You may create multiple blocks
-        with other names like [@]block('sidebar') etc if you like ;) -->
+            <!-- Content from child page is rendered here. You may create multiple blocks
+            with other names like [@]block('sidebar') etc if you like ;) -->
 
         @endblock
 
 
 
-
-
+        @( component('Footer') )
 
     </body>
 
-<!--back to top-->
-<a href="#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
-<!--back to top end-->
 <!--scripts and plugins -->
 <!--must need plugin jquery-->
 <script src="assets/protocols/qv/js/jquery.min.js"></script>

@@ -4,7 +4,7 @@ namespace ViewComponents;
 
 use Framework\MVC\ViewComponent;
 
-class HomePageSplashViewComponent extends ViewComponent
+class FooterViewComponent extends ViewComponent
 {
 
     public function __construct()
