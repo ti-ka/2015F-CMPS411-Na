@@ -13,12 +13,14 @@ class ImageController extends Controller
 
     public function render($file){
 
-        $file = "assets/temp-img/" . $file;
+        $file = "/assets/temp-img/" . $file;
 
         if(File::exists( $file)){
 
             Image::deliver($file);
 
+        } else {
+            echo "Image file not found";
         }
 
         return null;

@@ -39,5 +39,9 @@ class ViewComponent extends MinifyHelper
 
     }
 
+    protected function pass($array){
+        $this->registeredVariables = $array;
+    }
+
 
 }

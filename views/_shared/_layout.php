@@ -107,4 +107,8 @@
 <!-- For Extra Set of Scripts on child page -->
 @endblock
 
+@block('post-script-block')
+<!-- For more items in block -->
+@endblock
+
 </html>

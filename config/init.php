@@ -32,6 +32,7 @@ if(!defined("BASE_DIR")){
 
 
 
+    define("DOMAIN", $_SERVER['HTTP_HOST']);
     define("BASE_URL", $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST']. BASE_URL_RELATIVE);
 
     //print(BASE_URL."<br>");

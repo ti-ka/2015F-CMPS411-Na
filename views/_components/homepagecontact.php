@@ -56,6 +56,20 @@
                         </div>
                     </div>
                     <div class="row control-group">
+                        <div class="form-group col-xs-12  controls">
+                            <label for="reason">Reason of Inquiry<span>*</span></label>
+                            <select id="reason" class="form-control">
+                                <option>General Inquiry</option>
+                                <option>Speaking Engagements</option>
+                                <option>Advertising</option>
+                                <option>Sponsorship</option>
+                                <option>Donations</option>
+                                <option>Other</option>
+                            </select>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
                         <div class="form-group col-xs-12 controls">
                             <label>Message<span>*</span></label>
                             <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
@@ -83,12 +97,14 @@
                 <div class=" address-info wow animated bounceIn"  data-wow-duration="700ms" data-wow-delay="400ms">
                     <h3>Elsewhere</h3>
                     <ul class="list-inline social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+
+
+                        @foreach ($social_links as $social => $link)
+
+                        <li><a href="@( $link )"><i class="fa fa-@( $social )"></i></a></li>
+
+                        @endforeach
+
                     </ul>
                 </div>
             </div>

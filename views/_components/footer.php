@@ -4,20 +4,29 @@
             <div class="col-sm-4 margin-btm-30">
                 <div class="footer-col">
                     <h3 class="widget-title">
-                        About Quick Theme
+                        Resources
                     </h3>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text
-                    </p>
+                    <div>
+                            <div><ul class="footer-resources">
+                                    <li><a href="http://www.spacecamp.com/blackfriday" target="_blank&quot;">Visit Spacecamp</a></li>
+                                    <li><a href="http://www.mars-one.com" target="_blank&quot;">MarsOne | The Next Giant Leap For Mankind</a></li>
+                                    <li><a href="http://www.nasa.gov" target="_blank&quot;">NASA News &amp; Launches</a></li>
+                                    <li><a href="http://astronaut.com" target="_blank&quot;">Astronaut.com | Where Science Fiction Meets Reality</a></li>
+                                </ul>
+                            </div>
+
+                    </div>
                 </div><!--footer-col-->
 
                 <div class="footer-col">
                     <ul class="list-inline social-1">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+
+                        @foreach ($social_links as $social => $link)
+
+                        <li><a href="@( $link )"><i class="fa fa-@( $social )"></i></a></li>
+
+                        @endforeach
+
                     </ul>
                 </div><!--footer-col-->
             </div>
@@ -38,7 +47,7 @@
                         Subscribe to Newsletter
                     </h3>
                     <p>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                        Subscribe to blog, events and newsletters and stay updated with Blueberry Foundation.
                     </p>
                     <form role="form" class="subscribe-form">
                         <div class="input-group">
@@ -59,12 +68,12 @@
     <ul class="footer-nav list-inline text-center">
         <li><a href="#">Terms of use</a></li>
         <li><a href="#">Privacy and policy</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="typography.html">Typography</a></li>
+        <li><a href="#">Developers</a></li>
         <li><a href="#">Sign In</a></li>
     </ul>
     <div class="copyright text-center">
-        Copyright &copy; 2014. Quick Theme. Powered by <a href="#">bootstrap</a> and <a href="#">Design_mylife</a>
+
+        Copyright &copy; 2015 Blueberry Foundation
     </div>
 </div><!--footer-btm-->
 <!--back to top-->

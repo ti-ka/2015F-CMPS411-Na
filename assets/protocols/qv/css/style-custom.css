@@ -1,0 +1,21 @@
+img.img-responsive{
+    width: 100%;
+}
+.margin-5-0{
+    margin: 5px 0;
+}
+.margin-0-5{
+    margin: 0 5px;
+}
+select{
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -o-appearance: none !important;
+}
+ul.footer-resources{
+    margin:  0; padding: 0 .5em 2em 0.5em; list-style: none;
+}
+
+ul.footer-resources a{
+    color: #f3f3f3;
+}

@@ -18,9 +18,11 @@ class Image
 
     public function __construct($file)
     {
-
         $this->file = File::getRealPath($file);
+    }
 
+    public function getFilePath(){
+        return $this->file;
     }
 
     public function src(){

@@ -11,26 +11,23 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div id="testi-carousel" class="owl-carousel">
+
+                    @foreach ($testimonials as $testimonial)
+
                     <div>
                         <h4>
                             <i class="fa fa-quote-left"></i>
-                            Immediately received personal feedback from the creator of the theme.
-                            Incredibly fast, incredibly good. Great service!
+
+                            @( $testimonial.content )
+
                         </h4>
-                        <p>-Michael CC</p>
+                        <p>
+                            - @( $testimonial.author )
+                        </p>
                     </div><!--testimonials item like paragraph-->
-                    <div>
-                        <h4>
-                            <i class="fa fa-quote-left"></i>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia.
-                        </h4>
-                        <p>-Rakesh sharma</p>
-                    </div><!--testimonials item like paragraph-->
-                    <div>
-                        <h4>
-                            <i class="fa fa-quote-left"></i>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia.
-                        </h4>
-                        <p>-Rakesh sharma</p>
-                    </div><!--testimonials item like paragraph-->
+
+                    @endforeach
+
                 </div>
             </div>
         </div>

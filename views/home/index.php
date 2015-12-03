@@ -2,9 +2,9 @@
 
 
 @block('splash')
-<?php
-/*@*( component('HomePageSplash') )*/
-?>
+
+@( component('HomePageSplash') )
+
 @endblock
 
 
@@ -12,8 +12,8 @@
 
     @( component('HomePageSlideShow') )
     @( component('RecentBlogs') )
-@( component('Testimonials') )
-@( component('Gallery') )
+    @( component('Testimonials') )
+    @( component('Gallery') )
     @( component('HomePageContact') )
 
 

@@ -10,42 +10,52 @@ abstract class DBWrapper
 
     public function select($select = "*"){
         $this->select = $select;
+        return $this;
     }
 
     public function get($select = "*"){
         $this->select($select);/* alias of select */
+        return $this;
     }
 
     public function update($array){
         $this->update = $array;
+        return $this;
     }
 
     public function delete(){
         $this->delete = true;
+        return $this;
     }
 
     public function from($table){
         $this->table = $table;
+        return $this;
     }
 
     public function table($table){ /* alias of from */
         $this->from($table);
+        return $this;
     }
 
     public function where($array){
         $this->params = $array;
+        return $this;
     }
 
     public function limit($int){
         $this->limit = $int;
+        return $this;
     }
 
     public function sort($sort){
         $this->sort = $sort;
+        return $this;
     }
 
     public function asObject($object){
         $this->object = $object;
+        return $this;
     }
 
     public function execute(){

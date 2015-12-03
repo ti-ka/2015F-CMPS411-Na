@@ -15,6 +15,8 @@ class Route{
         if(!$this->routeCustomRoutes($uri)){
             if(!$this->routeMVC($uri)){
                 Redirect::trigger(404);
+            } else {
+                Redirect::trigger(500);
             }
         }
     }
@@ -62,6 +64,8 @@ class Route{
 
                 return true;
 
+            } else {
+                Redirect::trigger(500);
             }
         }
 
@@ -99,6 +103,7 @@ class Route{
 
             $variablesToFetchFromURL = $this->variablesToFetchFromURL($alias);
 
+
             if(count($variablesToFetchFromURL) > 0){
 
                 $_alias = $alias;
@@ -106,7 +111,6 @@ class Route{
                     $_alias = str_replace( "{".  $var. "}","$",$_alias);
                 }
                 $variablesFetched = $this->extractVariablesFromURL($_alias,$uri);
-
 
                 $matchedVariables = [];
 
@@ -141,26 +145,28 @@ class Route{
     }
 
     private function variablesToFetchFromURL($alias){
-        $expression = "/{([a-zA-Z0-9-:]+)}/";
+        $expression = "/{([a-zA-Z0-9-.]+)}/";
         preg_match_all($expression, $alias, $matches);
 
         return $matches[1];
     }
 
     private function extractVariablesFromURL($pattern,$input){
-        $delimiter = rand();
-        while (strpos($input,$delimiter) !== false) {
-            $delimiter++;
+
+        $pattern =    str_replace("$","([a-zA-Z0-9_.-]+)",$pattern) ;
+        $pattern =    str_replace("/","\\/",$pattern) ;
+
+
+        preg_match( "/" . $pattern . "/", $input, $matches);
+
+        if(count($matches) > 0){
+            array_shift($matches);
+            return $matches;
+        } else {
+            return [];
         }
 
-        $exps = explode("$",$pattern);
-        foreach($exps as $exp){
-            $input = str_replace($exp,",", $input);
-        }
 
-        $responses = explode(",", $input);
-        array_shift($responses);
-        return $responses;
     }
 
     public function setRoutes($routes)

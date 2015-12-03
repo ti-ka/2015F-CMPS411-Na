@@ -1,3 +1,4 @@
+<!--
 <section id="home" data-stellar-background-ratio="0.5">
     <div class="parallax-overlay"></div>
     <a id="video" class="player" data-property="{videoURL:'http://youtu.be/R55e-uHQna0',containment:'#home', showControls:true, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>

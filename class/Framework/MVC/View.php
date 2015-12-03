@@ -12,7 +12,7 @@ use Razr\Loader\FilesystemLoader;
 class View extends MinifyHelper
 {
 
-    private $title = BASE_URL,
+    private $title = DOMAIN,
             $metaContent = "",
             $author = "",
             $keywords = "",
@@ -86,7 +86,7 @@ class View extends MinifyHelper
 
     public function title($title)
     {
-        $this->title = $title;
+        $this->title = $title . " || " . $this->title;
         return $this;
     }
 

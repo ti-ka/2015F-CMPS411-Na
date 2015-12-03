@@ -24,7 +24,7 @@
         }
 
         public function test(){
-            return view();
+            return view("home.test");
         }
 
         public function error404(){

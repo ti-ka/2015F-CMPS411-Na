@@ -8,16 +8,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Quick</a>
+                <a class="navbar-brand" href="">Nasa<span style="color:#25CBF5">Blueberry</span></a>
             </div>
             <div class="navbar-collapse collapse">
 
                 <ul class="nav navbar-nav navbar-right scrollto">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
+
+                    @foreach ($tabs as $tab => $link)
+
+                        <li><a href="@( $link )">@( $tab )</a></li>
+
+                    @endforeach
+
                 </ul>
 
             </div><!--/.nav-collapse -->

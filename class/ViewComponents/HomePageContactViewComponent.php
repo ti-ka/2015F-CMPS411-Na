@@ -10,6 +10,7 @@ class HomePageContactViewComponent extends ViewComponent
     public function __construct()
     {
 
+        $this->pass(["social_links" => app()->social_links ]);
     }
 
 

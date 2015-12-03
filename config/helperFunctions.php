@@ -5,6 +5,7 @@ use Framework\MVC\Route;
 use Framework\MVC\View;
 use Framework\Services\Image;
 use Framework\Services\ServerTracker;
+use Framework\Services\StringService;
 use Framework\Storage\DB;
 use ViewComponents\TestViewComponent;
 
@@ -47,3 +48,13 @@ function image($path){
     function tracker(){
         return new ServerTracker();
     }
+
+    function string($stringId, $table = null, $resource = null){
+
+        $table = ($table === null) ?  "strings" : $table;
+        $resource = ($resource === null) ?  app()->language() : $resource;
+
+        $string = new StringService($stringId,$table,$resource);
+        return $string->getResource();
+    }
+

@@ -60,6 +60,7 @@ route()->setRoutes($routes)->deliver();
 
 */
 
+
 if(TRACK_RESOURCE){
     tracker()->track();
 }

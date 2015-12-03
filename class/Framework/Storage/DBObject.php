@@ -23,6 +23,8 @@ abstract class DBObject
             $this->find($search);
         }
 
+        $this->afterConstruct();
+
     }
 
     private function dbPrimaryKey(){
@@ -51,7 +53,8 @@ abstract class DBObject
             }
         }
 
-        $response = DB::get($this->dbTable, $params, 1);
+        $response = DB::getFrom($this->dbTable, $params, 1, null, get_class($this));
+
         if(count($response) > 0)
         {
             $first = $response[0];
@@ -66,7 +69,17 @@ abstract class DBObject
         }
     }
 
+    public function afterConstruct(){
+
+    }
+
+    public function beforeSave(){
+
+    }
+
     public function save(){
+
+        $this->beforeSave();
 
         $key = $this->dbPrimaryKey;
         $params = [$key => $this->$key];
@@ -82,7 +95,11 @@ abstract class DBObject
             }
         }
 
-        return DB::save($this->dbTable, $data, $params);
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+
+        return DB::saveTo($this->dbTable, $data, $params);
 
     }
 

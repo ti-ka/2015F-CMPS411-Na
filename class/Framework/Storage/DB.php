@@ -112,7 +112,6 @@ class DB extends DBWrapper{
         }
 
 
-
         $stm = self::getInstance()->prepare($sql);
         $stm->execute($DBParams);
         if($class === null){
@@ -122,7 +121,7 @@ class DB extends DBWrapper{
         }
     }
 
-    public static function save($tbl, $fields, $params){
+    public static function saveTo($tbl, $fields, $params){
 
         if(DB::exists($tbl, $params)){
             return DB::updateTo($tbl, $fields, $params);
@@ -182,7 +181,9 @@ class DB extends DBWrapper{
             $sql .= " LIMIT ".$limit;
         }
 
+        echo $sql;
         $stm = self::getInstance()->prepare($sql);
+
         try{
             $stm->execute($DBParams);
             self::$pdo->errorInfo();

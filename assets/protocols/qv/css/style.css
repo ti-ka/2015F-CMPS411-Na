@@ -846,6 +846,7 @@ input[type="color"]:focus,
 .social-1 li a i:hover{
     opacity: 0.8;
 }
+
 .social-1 li a i.fa-facebook{
     background-color: #3b5998;
 }
@@ -860,6 +861,10 @@ input[type="color"]:focus,
 }
 .social-1 li a i.fa-dribbble{
     background-color: #ea4c89;
+}
+
+.social-1 li a i.fa-instagram{
+    background-color: #854330;
 }
 
 
